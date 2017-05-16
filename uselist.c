@@ -15,5 +15,27 @@ int main(int argc, char const *argv[]) {
 
   print(L);
 
+  printf("The numbers 1.0, 4.0 and 7.0 will be added at the beginning of the list\n");
+  pushFront(&L,1.0);
+  pushFront(&L,4.0);
+  pushFront(&L,7.0);
+
+  print(L);
+
+  printf("\n");
+
+  printf("The length of the list is: %d\n",length(L));
+
+  printf("\n");
+
+  printf("The second element of the list is: %.1f\n", getElement(L,1));
+
+  printf("\n");
+
+  printf("The first element of the list is: %.1f\n", getElement(L,0));
+
+  printf("\n");
+
+
   return 0;
 }

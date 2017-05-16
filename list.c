@@ -64,3 +64,96 @@ void pushBack (TList **L, float e)
     it->next=new;
   }
 }
+
+
+//This function adds the element e at the beginning of the list
+void pushFront (TList **L, float e)
+{
+
+  if (*L==NULL)
+  {
+    *L = (TList*)malloc(sizeof(TList));
+    (*L)->val=e;
+    (*L)->next=NULL;
+    (*L)->prior=NULL;
+  }
+  else
+  {
+
+  	TList *new =malloc(sizeof(TList));
+  	new->next = *L;
+  	(*L)->prior = new;
+  	new->prior = NULL;
+  	new->val = e;
+  	*L = new;
+
+  }
+
+}
+
+
+//This functions returns the length of the list
+int length(TList *L)
+{
+  TList* it=L;
+
+  int con=0; //This counter will give us the number of floats
+
+  if(it==NULL)
+  {
+    ;
+  }
+  else
+  {
+    con++;
+    while (it->next!=NULL)
+    {
+      it=it->next;
+      con++;
+    }
+  }
+
+  return con;
+}
+
+
+
+//This functions returns the element i of the list
+float getElement (TList *L, int i)
+{
+  TList *it, *wanted;
+  it=L;
+
+  float element;
+
+  for(int j=0; j<(i);j++) it=it ->next;
+  {
+    wanted=it;
+  }
+
+  element=wanted->val;
+
+  return element ;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+////////////////////////////////////////////////////////////////
