@@ -36,6 +36,14 @@ int main(int argc, char const *argv[]) {
 
   printf("\n");
 
+  printf("The first element will be removed, result: %d\n", removeFront(&L) );
+
+  print(L);
+
+  printf("The last element will be removed, result: %d\n", removeBack(&L) );
+
+  print(L);
+
 
   return 0;
 }

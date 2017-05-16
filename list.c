@@ -138,6 +138,68 @@ float getElement (TList *L, int i)
 
 
 
+//This functions removes the first element of the list (1 sucess, 0 otherwise)
+int removeFront(TList **L)
+{
+  TList *notwanted;
+
+  notwanted=*L;
+
+  int end;
+
+  if(*L==NULL)
+  {
+    end=0;
+  }
+  else
+  {
+    *L=(*L)->next;
+    free(notwanted);
+    (*L)->prior=NULL;
+    end=1;
+  }
+
+  return end;
+
+}
+
+
+//This function removes the last element of the list (1 sucess, 0 otherwise)
+int removeBack(TList **L)
+{
+  TList *it, *notwanted;
+  it=*L;
+  notwanted=*L;
+
+  int end;
+
+  if(it==NULL)
+  {
+    end=0;
+  }
+  else if (it!=NULL)
+  {
+    while (notwanted->next!=NULL)
+    {
+      notwanted=notwanted->next;
+    }
+    it=notwanted->prior; //It se queda en el anterior al que quiero Borrar
+    it->next=NULL;
+
+    free(notwanted);
+
+    end=1;
+
+  }
+
+  return end;
+}
+
+
+
+
+
+
 
 
 
