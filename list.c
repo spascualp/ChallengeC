@@ -190,16 +190,146 @@ int removeBack(TList **L)
 
     end=1;
 
+
   }
 
   return end;
 }
 
 
+//This function removes the element in the position i of the list (1 sucess, 0 otherwise)
+int removeElement (TList **L, int i)
+{
+  TList *it, *notwanted, *aux;
+
+  it=*L;
+  notwanted=*L;
+  aux=*L;
+
+  int end;
+
+  if((i>length(*L)-1 || *L==NULL || i<0))
+  {
+    end=0;
+  }
+  else
+  {
+    int N=i;
+    if(i==0)
+    {
+      *L=(*L)->next;
+      (*L)->prior=NULL;
+      free(notwanted);
+    }
+    else if(i==1)
+    {
+      it=(*L)->next;
+      notwanted=it;
+      it=it->next;
+
+      (*L)->next=it;
+      it->prior=*L;
+    }
+    else
+    {
+      for( int j=0; j<N;j++)
+      {
+        notwanted=(notwanted->next);
+      }
+
+      it=notwanted;
+
+      aux=it->prior;
+
+      if(N==length(*L)-1)
+      {
+        it=it->prior;
+        free(notwanted);
+        it->next=NULL;
+      }
+      else
+      {
+        it=it->next;
+        aux->next=it;
+        it->prior=aux;
+        free(notwanted);
+      }
+
+    }
+
+    end =1;
+  }
+
+  return end;
+}
 
 
+//This function inserts the element e in the position i (1 sucess, 0 otherwise)
+int insertElement(TList **L, int i, float e)
+{
+  TList *it=*L;
+  TList *before=*L;
+
+  int fin;
+
+  if(i>length(*L)-1 || i<0)
+  {
+    fin=0;
+  }
+  else
+  {
+    fin =1;
 
 
+      int N=i;
+      if(N==0)
+      {
+        TList *new =malloc(sizeof(TList));
+      	new->next = *L;
+      	(*L)->prior = new;
+      	new->prior = NULL;
+      	new->val = e;
+      	*L = new;
+      }
+      else
+      {
+        for(int j=0;j<N-1;j++)
+        {
+          before=before->next;
+        }
+
+        it=before->next;
+        TList *new =malloc(sizeof(TList));
+
+
+        before->next=new;
+        new->prior=before;
+        new->next=it;
+        it->prior=new;
+        new->val=e;
+      }
+    }
+
+  return fin;
+
+}
+
+//This function removes the content of the list
+void clear (TList **L)
+{
+  TList *notwanted=*L;
+
+  while((*L)->next!=NULL)
+  {
+    *L=(*L)->next;
+    free(notwanted);
+    notwanted=*L;
+  }
+
+  *L=NULL;
+  free(*L);
+
+}
 
 
 

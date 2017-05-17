@@ -13,3 +13,6 @@ int length(TList *L);
 float getElement(TList *L, int i);
 int removeFront (TList **L);
 int removeBack (TList **L);
+int removeElement(TList **L, int i);
+int insertElement(TList **L, int i, float e);
+void clear (TList **L);

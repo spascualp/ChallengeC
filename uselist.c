@@ -45,5 +45,23 @@ int main(int argc, char const *argv[]) {
   print(L);
 
 
+  printf("The element on the third position will be removed, result: %d\n",removeElement(&L,2) );
+
+  print(L);
+
+  printf("The element on the second position will be removed, result: %d\n",removeElement(&L,1) );
+
+  print(L);
+
+  printf("We insert the number 5.0 on the second position, result: %d\n",  insertElement(&L,1,5) );
+
+  print(L);
+
+  printf("We remove the list.\n" );
+
+  clear(&L);
+
+  print(L);
+
   return 0;
 }
