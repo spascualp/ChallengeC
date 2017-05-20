@@ -396,8 +396,47 @@ int lessThanE (TList *L, float e)
 }
 
 
+//This function returns the sum of all the content in the list
+float sumList (TList *L)
+{
+  int sum=0;
+
+  if (L==NULL)
+  {
+    ;
+  }
+  else
+  {
+    TList* it=L;
+
+    while(it!= NULL)
+    {
+      sum=sum+it->val;
+      it=it->next;
+    }
+
+  }
+
+  return sum;
+}
 
 
+//This functions returns the average of all elements in the list
+float averageList (TList *L)
+{
+  float average=0;
+
+  if (L==NULL)
+  {
+    ;
+  }
+  else
+  {
+    average=sumList(L)/length(L);
+  }
+
+  return average;
+}
 
 
 

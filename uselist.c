@@ -87,6 +87,11 @@ int main(int argc, char const *argv[]) {
 
   printf("Now we look for the number of elements less than 5: %d\n", lessThanE(L, 5) );
 
+  printf("The sum is: %.1f\n", sumList(L));
+
+  printf("The average is: %.1f\n", averageList(L) );
+
+
 
   return 0;
 }

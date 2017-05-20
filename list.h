@@ -18,3 +18,5 @@ int insertElement(TList **L, int i, float e);
 void clear (TList **L);
 int greaterThanE( TList *L, float e);
 int lessThanE( TList *L, float e);
+float sumList (TList *L);
+float averageList (TList *L);
