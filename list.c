@@ -432,7 +432,7 @@ float averageList (TList *L)
   }
   else
   {
-    average=sumList(L)/length(L);
+    average=sumList(L)/(float)length(L);
   }
 
   return average;
