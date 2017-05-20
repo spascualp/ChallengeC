@@ -332,9 +332,68 @@ void clear (TList **L)
 }
 
 
+//This function returns the number of elements greater than the value e
+int greaterThanE (TList *L, float e)
+{
+  int con=0; //This counter will give us the number of elements greater than e
+
+  if (L==NULL)
+  {
+    ;
+  }
+  else
+  {
+    TList* it=L;
+
+    while(it!= NULL)
+    {
+      if (it->val > e)
+      {
+        con++;
+      }
+      else
+      {
+        ;
+      }
+      it=it->next;
+    }
+
+  }
+
+  return con;
+}
 
 
+//This function returns the number of elements less than the value e
+int lessThanE (TList *L, float e)
+{
+  int con=0;
 
+  if (L==NULL)
+  {
+    ;
+  }
+  else
+  {
+    TList* it=L;
+
+    while(it!= NULL)
+    {
+      if (it->val < e)
+      {
+        con++;
+      }
+      else
+      {
+        ;
+      }
+      it=it->next;
+    }
+
+  }
+
+  return con;
+}
 
 
 

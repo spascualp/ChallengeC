@@ -16,3 +16,5 @@ int removeBack (TList **L);
 int removeElement(TList **L, int i);
 int insertElement(TList **L, int i, float e);
 void clear (TList **L);
+int greaterThanE( TList *L, float e);
+int lessThanE( TList *L, float e);

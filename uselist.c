@@ -63,5 +63,30 @@ int main(int argc, char const *argv[]) {
 
   print(L);
 
+  printf("We create a new list to work with: \n");
+
+  pushBack(&L,5.0);
+  pushBack(&L,8.0);
+  pushBack(&L,9.0);
+  pushBack(&L,7.0);
+  pushBack(&L,1.0);
+  pushBack(&L,6.0);
+
+  pushFront(&L,0.0);
+  pushFront(&L,2.0);
+  pushFront(&L,8.0);
+  pushFront(&L,5.0);
+
+  print(L);
+
+  printf("Now we look for the number of elements greater than 0: %d\n", greaterThanE(L, 0) );
+
+  printf("Now we look for the number of elements greater than 5: %d\n", greaterThanE(L, 5) );
+
+  printf("Now we look for the number of elements less than 0: %d\n", lessThanE(L, 0) );
+
+  printf("Now we look for the number of elements less than 5: %d\n", lessThanE(L, 5) );
+
+
   return 0;
 }
